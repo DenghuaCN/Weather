@@ -229,16 +229,16 @@ function bigImg(text) {
     if (text == "多云") {
         return "./img/big-weather-icon/overcast.png";
     } else if (text == "阴") {
-        return "/img/big-weather-icon/cloudy.png";
+        return "./img/big-weather-icon/cloudy.png";
     } else if (text == "晴") {
-        return "/img/big-weather-icon/sun.png";
+        return "./img/big-weather-icon/sun.png";
     } else if (text == "小雨" || text == "中雨") {
-        return "img/big-weather-icon/light-rain.png";
+        return "./img/big-weather-icon/light-rain.png";
     } else if (text == "暴雨" || text == "大雨") {
-        return "img/big-weather-icon/heavy-rain.png";
+        return "./img/big-weather-icon/heavy-rain.png";
     } else if (text == "雷电") {
-        return "img/big-weather-icon/thunder.png";
+        return "./img/big-weather-icon/thunder.png";
     } else if (text == "大风") {
-        return "img/big-weather-icon/gale.png";
+        return "./img/big-weather-icon/gale.png";
     }
 }

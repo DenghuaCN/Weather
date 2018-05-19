@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>weather</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="https://use.fontawesome.com/deda092d2c.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="weather-window">
+            <div class="circlebox">
+                <a href="#">
+                    <div class="circle">
+                        <img id="click_circle_icon" src="./img/suggestion/click-circle2.png" alt="content">
+
+                    </div>
+                </a>
+            </div>
+            <div class="circle-content">
+                <ul class="circle-content-ul">
+                    <li class="ccu-libox">
+                        <div class="ccu-li-left">
+                            <img src="./img/suggestion/dress.png" alt="" class="ccu-li-left-img">
+                        </div>
+                        <div class="ccu-li-right">
+                            <div class="ccu-blod">default</div>
+                            <div class="ccu-normal">default</div>
+                        </div>
+                    </li>
+                    <li class="ccu-libox">
+                        <div class="ccu-li-left">
+                            <img src="./img/suggestion/uv.png" alt="" class="ccu-li-left-img" style="margin-left: -3px;">
+                        </div>
+                        <div class="ccu-li-right" style="margin-left: 26px;">
+                            <div class="ccu-blod">default</div>
+                            <div class="ccu-normal">default</div>
+                        </div>
+                    </li>
+                    <li class="ccu-libox">
+                        <div class="ccu-li-left">
+                            <img src="./img/suggestion/car-wash.png" alt="" class="ccu-li-left-img">
+                        </div>
+                        <div class="ccu-li-right">
+                            <div class="ccu-blod">default</div>
+                            <div class="ccu-normal">default</div>
+                        </div>
+                    </li>
+                    <li class="ccu-libox">
+                        <div class="ccu-li-left">
+                            <img src="./img/suggestion/travel.png" alt="" class="ccu-li-left-img">
+                        </div>
+                        <div class="ccu-li-right">
+                            <div class="ccu-blod">default</div>
+                            <div class="ccu-normal">default</div>
+                        </div>
+                    </li>
+                    <li class="ccu-libox">
+                        <div class="ccu-li-left">
+                            <img src="./img/suggestion/flu.png" alt="" class="ccu-li-left-img">
+                        </div>
+                        <div class="ccu-li-right">
+                            <div class="ccu-blod">default</div>
+                            <div class="ccu-normal">default</div>
+                        </div>
+                    </li>
+                    <li class="ccu-libox">
+                        <div class="ccu-li-left">
+                            <img src="./img/suggestion/sport.png" alt="" class="ccu-li-left-img">
+                        </div>
+                        <div class="ccu-li-right">
+                            <div class="ccu-blod">default</div>
+                            <div class="ccu-normal">default</div>
+                        </div>
+                    </li>
+                </ul>
+                <div id="close">
+                    <img id="close_icon" src="./img/suggestion/close.png" alt="close">
+                </div>
+            </div>
+
+
+            <div class="big-window">
+                <div class="big-temperature-img">
+                    <div class="bti-box">
+
+                        <div class="bti-bigLoading">
+                            <i class="fa fa-5x fa-spinner fa-pulse"></i>
+                        </div>
+                        <img class="bti-img" src="">
+
+                    </div>
+                    <div class="bti-span-box">
+                        <span class="bti-span">0</span><span class="degree">℃</span>
+                    </div>
+                </div>
+                <div class="big-right-box">
+                    <div class="brb-humidity-icon">
+                        <img class="brb-humidity-img" src="./img/big-weather-icon/humidity.png" alt="">
+                    </div>
+
+                    <div class="brb-canvas">
+                        <canvas id="yuan" width="220px" height="220px"></canvas>
+                    </div>
+
+                    <div class="brb-humidity-text">
+                        <span id="brb-humidity-span">0</span>
+                    </div>
+                </div>
+                <div class="bottom-air-qualityBox">
+                    <ul class="baq-ul">
+                        <li class="baq-ul-li-pm25">
+                            <img src="./img/air-quality-icon/pm25.png" alt="">
+                            <p>0</p>
+                        </li>
+                        <li class="baq-ul-li-pm10">
+                            <img src="./img/air-quality-icon/pm10.png" alt="">
+                            <p>0</p>
+                        </li>
+                        <li class="baq-ul-li-co">
+                            <img src="./img/air-quality-icon/co.png" alt="">
+                            <p>0</p>
+                        </li>
+                        <li class="baq-ul-li-so2">
+                            <img src="./img/air-quality-icon/so2.png" alt="">
+                            <p>0</p>
+                        </li>
+                        <li class="baq-ul-li-o3">
+                            <img src="./img/air-quality-icon/o3.png" alt="">
+                            <p>0</p>
+                        </li>
+                        <li class="baq-ul-li-quality">
+                            <img class="baq-ulli-qualityImg" src="./img/air-quality-icon/common.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="weather-future">
+                <div class="weather-future-right">
+                    <ul class="wfr-ul">
+                        <li class="wfr-ul-li">
+                            <div class="wfrli-week">
+                                <span class="wfrli-week-span">week1</span>
+                            </div>
+                            <div class="wfrli-small-icon">
+                                <img class="wfrli-img" src="./img/big-weather-icon/sun.png" alt="">
+                            </div>
+                            <div class="wfrli-temperature">
+                                <span class="wfrli-number-span">0</span><span class="degressicon">℃</span>
+                            </div>
+                        </li>
+                        <li class="wfr-ul-li">
+                            <div class="wfrli-week">
+                                <span class="wfrli-week-span">week2</span>
+                            </div>
+                            <div class="wfrli-small-icon">
+                                <img class="wfrli-img" src="./img/big-weather-icon/sun.png" alt="">
+                            </div>
+                            <div class="wfrli-temperature">
+                                <span class="wfrli-number-span">0</span><span class="degressicon">℃</span>
+                            </div>
+                        </li>
+                        <li class="wfr-ul-li">
+                            <div class="wfrli-week">
+                                <span class="wfrli-week-span">week3</span>
+                            </div>
+                            <div class="wfrli-small-icon">
+                                <img class="wfrli-img" src="./img/big-weather-icon/sun.png" alt="">
+                            </div>
+                            <div class="wfrli-temperature">
+                                <span class="wfrli-number-span">0</span><span class="degressicon">℃</span>
+                            </div>
+                        </li>
+                        <li class="wfr-ul-li">
+                            <div class="wfrli-week">
+                                <span class="wfrli-week-span">week4</span>
+                            </div>
+                            <div class="wfrli-small-icon">
+                                <img class="wfrli-img" src="./img/big-weather-icon/sun.png" alt="">
+                            </div>
+                            <div class="wfrli-temperature">
+                                <span class="wfrli-number-span">0</span><span class="degressicon">℃</span>
+                            </div>
+                        </li>
+                        <li class="wfr-ul-li">
+                            <div class="wfrli-week">
+                                <span class="wfrli-week-span">week5</span>
+                            </div>
+                            <div class="wfrli-small-icon">
+                                <img class="wfrli-img" src="./img/big-weather-icon/sun.png" alt="">
+                            </div>
+                            <div class="wfrli-temperature">
+                                <span class="wfrli-number-span">0</span><span class="degressicon">℃</span>
+                            </div>
+                        </li>
+                        <li class="wfr-ul-li">
+                            <div class="wfrli-week">
+                                <span class="wfrli-week-span">week6</span>
+                            </div>
+                            <div class="wfrli-small-icon">
+                                <img class="wfrli-img" src="./img/big-weather-icon/sun.png" alt="">
+                            </div>
+                            <div class="wfrli-temperature">
+                                <span class="wfrli-number-span">0</span><span class="degressicon">℃</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/humidity.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/weather-ajax.js"></script>
+</html>

@@ -1,0 +1,73 @@
+
+function circleProgress(value, average) {
+    var canvas = document.getElementById("yuan");
+    var context = canvas.getContext('2d');
+    var _this = $(canvas),
+    value = Number(value), // 当前百分比,数值
+    average = Number(average), // 平均百分比
+    color = "#1296db", // 进度条、文字样式
+    maxpercent = 100, //最大百分比，可设置
+    c_width = _this.width(), // canvas，宽度
+    c_height = _this.height(); // canvas,高度
+
+
+    // 清空画布
+    context.clearRect(0, 0, c_width, c_height);
+    // 画初始圆
+    context.beginPath();
+    // 将起始点移到canvas中心
+    context.moveTo(c_width / 2, c_height / 2);
+    // 绘制一个中心点为（c_width/2, c_height/2），半径为c_height/2，起始点0，终止点为Math.PI * 2的 整圆
+    context.arc(c_width / 2, c_height / 2, c_height / 2, 0, Math.PI * 2, false);
+    context.closePath();
+    context.fillStyle = 'white'; //填充颜色
+    context.fill();
+    // 绘制内圆
+    context.beginPath();
+    context.strokeStyle = color;
+    context.lineCap = 'square';
+    context.closePath();
+    context.fill();
+    context.lineWidth = 10.0; //绘制内圆的线宽度
+    
+    function draw(cur) {
+        // 画内部空白
+        context.beginPath();
+        context.moveTo(24, 24);
+        context.arc(c_width / 2, c_height / 2, c_height / 2 - 10, 0, Math.PI * 2, true);
+        context.closePath();
+        context.fillStyle = 'rgba(255,255,255,1)'; // 填充内部颜色
+        context.fill();
+        // 画内圆
+        context.beginPath();
+        // 绘制一个中心点为（c_width/2, c_height/2），半径为c_height/2-5不与外圆重叠，
+        // 起始点-(Math.PI/2)，终止点为((Math.PI*2)*cur)-Math.PI/2的 整圆cur为每一次绘制的距离
+        context.arc(c_width / 2, c_height / 2, c_height / 2 - 8, -(Math.PI / 2), ((Math.PI * 2) * cur) - Math.PI /
+        2, false);
+        context.stroke();
+        //在中间写字
+        context.font = "lighter 18pt sans-serif"; // 字体大小，样式
+        context.fillStyle = color; // 颜色
+        context.textAlign = 'center'; // 位置
+        context.textBaseline = 'middle';
+        context.moveTo(c_width / 2, c_height / 2); // 文字填充位置
+        // context.fillText(value + "%", c_width / 2, c_height / 2 + 55);
+        // context.fillText("正确率", c_width / 2, c_height / 2 - 20);
+    }
+    // 调用定时器实现动态效果
+    var timer = null,
+    n = 0;
+    
+    function loadCanvas(nowT) {
+        timer = setInterval(function () {
+            if (n > nowT) {
+                clearInterval(timer);
+            } else {
+                draw(n);
+                n += 0.01;
+            }
+        }, 16);
+    }
+    loadCanvas(value / 100);
+    timer = null;
+};

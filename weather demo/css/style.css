@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.weather-window {
+    position: relative;
+    border: solid 1px rgb(233, 233, 233);
+    border-radius: 20px;
+    width: 800px;
+    height: 550px;
+    margin: 0 auto;
+    margin-top: 200px;
+    overflow: hidden;
+}
+
+/*circle start*/
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(15, 189, 255);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    /* cursor: pointer; */
+    z-index: 2;
+}
+
+#click_circle_icon {
+    margin-left: 1px;
+}
+
+.circle-content {
+    position: absolute;
+    /* border: solid 1px red;j */
+    z-index: 3;
+    margin-left: 50px;
+    margin-top: 20px;
+    display: none;
+}
+
+.circle-content-ul {
+    list-style: none;
+}
+
+.ccu-libox {
+    margin-top: 35px;
+    /* border: solid 1px black; */
+}
+
+.ccu-libox:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.ccu-li-left {
+    /* border: solid 1px red; */
+    float: left;
+    padding-top: 5px;
+}
+
+.ccu-li-right {
+    /* border: solid 1px blue; */
+    float: left;
+    margin-left: 30px;
+}
+
+.ccu-blod {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "微软雅黑";
+}
+
+.ccu-normal {
+    color: rgb(58, 13, 13);
+    font-size: 14px;
+    padding-top: 3px;
+    font-family: "微软雅黑";
+}
+
+/*circle end*/
+
+#close {
+    position: absolute;
+    left: 689px;
+    top: -2px;
+    cursor: pointer;
+    display: none;
+}
+
+#close_icon {
+    width: 42px;
+    height: 42px;
+}
+
+.big-temperature-img {
+    float: left;
+    margin-left: 25px;
+    /* border: solid 1px black; */
+}
+
+.weather-window .big-window {
+    /* border: solid 1px black; */
+    padding-top: 1px;
+    /* background-color: rgb(0, 0, 0); */
+    height: 400px;
+}
+
+
+.bti-img {
+    /* margin: 50px 0 0 130px; */
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    left: 150px;
+    top: 50px;
+    display: none;
+}
+
+.bti-bigLoading {
+    position: absolute;
+    left: 170px;
+    top: 87px;
+}
+
+.bti-span-box {
+    float: left;
+    position: absolute;
+    left: 125px;
+    top: 194px;
+}
+
+.bti-span {
+    font-size: 6em;
+    font-family: cursive;
+    color: rgb(70, 70, 70);
+}
+
+.degree {
+    padding-left: 20px;
+    font-size: 4em;
+    color: rgb(70, 70, 70);
+}
+
+.bottom-air-qualityBox {
+    margin-top: 320px;
+    height: 95px;
+}
+
+.baq-ul {
+    list-style: none;
+}
+
+.baq-ul:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.baq-ul li {
+    margin-left: 65px;
+    display: inline-block;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+.baq-ul li:last-child {
+    margin-left: 55px;
+}
+
+.baq-ul .baq-ul-li p {
+    color: rgb(15, 189, 255);
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.big-right-box {
+    margin-right: 40px;
+    float: right;
+    width: 400px;
+    height: 300px;
+    position: relative;
+}
+
+.big-right-box:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.brb-humidity-icon {
+    position: absolute;
+    top: 125px;
+    left: 115px;
+    z-index: 1;
+}
+
+.brb-humidity-img {
+    width: 80px;
+    height: 80px;
+}
+
+.brb-canvas {
+    position: absolute;
+    left: 84px;
+    top: 54px;
+}
+
+.brb-humidity-text {
+    position: absolute;
+    top: 143px;
+    left: 205px;
+}
+
+#brb-humidity-span {
+    font-size: 2.2em;
+    font-family: sans-serif;
+    color: #1296db;
+}
+
+.weather-window .weather-future {
+    padding-top: 1px;
+    background-color: rgb(15, 189, 255);
+    height: 148px;
+}
+
+.weather-future-right {
+    margin-top: 2px;
+}
+
+.weather-future-right .wfr-ul {
+    list-style: none;
+}
+
+.weather-future-right .wfr-ul:after {
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+}
+
+.wfr-ul li {
+    margin-left: 5px;
+    float: left;
+    width: 125px;
+    height: 140px;
+    text-align: center;
+}
+
+.wfrli-img {
+    margin-top: 15px;
+    width: 40px;
+    height: 40px;
+}
+
+.wfrli-week {
+    margin-top: 12px;
+}
+
+.wfrli-week span {
+    font-size: 18px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+}
+
+.wfrli-temperature {
+    margin-top: 10px;
+}
+
+.wfrli-temperature span {
+    font-size: 1.1em;
+    color: rgb(19, 57, 171);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 2px;
+}
+
+.wfrli-temperature .degressicon {
+    font-size: .9em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
